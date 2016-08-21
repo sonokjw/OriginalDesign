@@ -5,8 +5,6 @@ int branchy = bodyy+95;
 int cx = 400;
 int cx2 = 100;
 
-// int minimum = 0;
-// int maximum = 100;
 
 
 void setup()
@@ -24,7 +22,6 @@ void draw()
 	ears();
 	feet();
 	face();
-	// GuessNumberGame();
 }
 
 void moon()
@@ -124,10 +121,3 @@ void face()
 	    arc(i, bodyy+85, 5, 7, 0, PI);
 	}
 }
-
-// void GuessNumberGame(){
-// 	textAlign(CENTER, TOP);
-//     textSize(30);
-//     text("Guess the Number!", 285, 225);
-
-// }
