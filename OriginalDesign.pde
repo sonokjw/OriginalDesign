@@ -1,14 +1,20 @@
 int bodyx = 155;
 int bodyy = 90;
+int branchx = 320;
+int branchy = bodyy+95;
+int cx = 320;
+int cx2 = 100;
 
 void setup()
 {
-  size(500, 500);
-  background(20, 30, 71);
-
+  size(600, 600);
 }
+
 void draw()
 {
+	background(20, 30, 71);
+	moon();
+	clouds();
 	tree();
 	body();
 	ears();
@@ -16,17 +22,46 @@ void draw()
 	face();
 }
 
+void moon()
+{
+	noStroke();
+	fill(245, 229, 49);
+	ellipse(500, 50, 100, 100);
+}
+
+void clouds()
+{
+	noStroke();
+	fill(230, 230, 230);   //clouds
+    ellipse(cx, 100, 100, 40);  //1
+    ellipse(cx +50, 100, 60, 30);
+    ellipse(cx -60, 100, 60, 30);
+    ellipse(cx2, 150, 60, 40);  //2
+    ellipse(cx2-30, 150, 40, 30);
+    ellipse(cx2+40, 150, 80, 30);
+    cx-=0.2;
+    cx2-=0.2;
+    if(cx < -150){
+        cx = 675;
+        cx -=0.2;
+    }
+    if(cx2 < -150){
+        cx2 = 675;
+        cx2 -= 0.2;
+    }
+}
+
 void tree()
 {
 	noStroke();
 	fill(71, 39, 4);
-	rect(20, -10, 60, 550);
-	triangle(80, 210, 80, 190, 320, 180);
+	rect(20, -10, 60, 1000);
+	triangle(branchx-240, branchy+5, branchx-240, branchy+15, branchx, branchy);
 	//leaves
 	fill(31, 168, 24);
-	arc(321, 185, 20, 15, 1.2*PI, 2.17*PI);
+	arc(branchx+1, branchy+5, 20, 15, 1.2*PI, 2.17*PI);
 	fill(8, 112, 11);
-	arc(315, 192, 15, 25, 1.3*PI, 2.2*PI);
+	arc(branchx-5, branchy+10, 15, 25, 1.3*PI, 2.2*PI);
 }
 
 void body()
