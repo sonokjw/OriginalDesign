@@ -2,7 +2,7 @@ int bodyx = 155;
 int bodyy = 90;
 int branchx = 320;
 int branchy = bodyy+95;
-int cx = 320;
+int cx = 400;
 int cx2 = 100;
 
 void setup()
