@@ -16,6 +16,7 @@ header {
 }
 
 footer {
+	font-family: Arial, Helvetica, sans-serif;
 	color: yellow;
 	font-style: italic;
 	font-size: 90%;
