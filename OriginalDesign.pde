@@ -4,7 +4,7 @@ int branchx = 320;
 int branchy = bodyy+95;
 int cx = 400;
 int cx2 = 100;
-
+int grassx = 0;
 
 
 void setup()
@@ -18,6 +18,7 @@ void draw()
 	moon();
 	clouds();
 	tree();
+	grass();
 	body();
 	ears();
 	feet();
@@ -64,6 +65,20 @@ void tree()
 	arc(branchx+1, branchy+5, 20, 15, 1.2*PI, 2.17*PI);
 	fill(8, 112, 11);
 	arc(branchx-5, branchy+10, 15, 25, 1.3*PI, 2.2*PI);
+}
+
+void grass()
+{
+	noStroke();
+	fill(19, 141, 19);
+	rect(-1, 525, 650, 100);
+
+	for(int grassx = 0; grassx < 600; grassx+=30){
+		triangle(grassx, 525, grassx +5, 525, grassx +2, 512);
+		triangle(grassx +4, 525, grassx +12, 525, grassx +10, 510);
+	}
+	
+
 }
 
 void body()
