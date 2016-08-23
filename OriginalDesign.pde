@@ -23,6 +23,7 @@ void draw()
 	ears();
 	feet();
 	face();
+	mouseClicked();
 }
 
 void moon()
@@ -73,7 +74,7 @@ void grass()
 	fill(19, 141, 19);
 	rect(-1, 525, 650, 100);
 
-	for(int grassx = 0; grassx < 600; grassx+=30){
+	for(int grassx = 0; grassx < 600; grassx+=18){
 		triangle(grassx, 525, grassx +5, 525, grassx +2, 512);
 		triangle(grassx +4, 525, grassx +12, 525, grassx +10, 510);
 	}
@@ -110,17 +111,46 @@ void feet()
 	ellipse(bodyx+74, bodyy+100, 9, 11);
 }
 
-void face()
+int eyeplusx = 0;
+int eyeplusy = 0;
+
+void mouseClicked()
 {
+	if(mouseX >= 255){
+		eyeplusx = 10;
+	}
+	else if(mouseX <= 140){
+		eyeplusx = -10;
+	}
+	else{
+		eyeplusx = 0;
+	}
+
+	if(mouseY >= 170){
+		eyeplusy = 10;
+	}
+	else if(mouseY <= 100){
+		eyeplusy = -10;
+	}
+
+	else{
+		eyeplusy = 0;
+	}
+}
+
+void face()
+{	
+	
+
 	fill(255, 255, 255);                 //eyes
 	ellipse(bodyx+27, bodyy+40, 45, 45);
 	ellipse(bodyx+73, bodyy+40, 45, 45);
 	fill(0);
-	ellipse(bodyx+30, bodyy+40, 15, 15);
-	ellipse(bodyx+70, bodyy+40, 15, 15);
+	ellipse(bodyx+30 + eyeplusx, bodyy+40 + eyeplusy, 15, 15);
+	ellipse(bodyx+70 + eyeplusx, bodyy+40 + eyeplusx, 15, 15);
 	fill(255, 255, 255);
-	ellipse(bodyx+32, bodyy+40, 5, 5);
-	ellipse(bodyx+68, bodyy+40, 5, 5);
+	ellipse(bodyx+32 +eyeplusx, bodyy+40 +eyeplusy, 5, 5);
+	ellipse(bodyx+68 + eyeplusx, bodyy+40 + eyeplusx, 5, 5);
 
 	fill(245, 207, 14);                  //beak
 	triangle(bodyx+43, bodyy+60, bodyx+57, bodyy+60, bodyx+50, bodyy+55);
