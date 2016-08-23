@@ -147,10 +147,10 @@ void face()
 	ellipse(bodyx+73, bodyy+40, 45, 45);
 	fill(0);
 	ellipse(bodyx+30 + eyeplusx, bodyy+40 + eyeplusy, 15, 15);
-	ellipse(bodyx+70 + eyeplusx, bodyy+40 + eyeplusx, 15, 15);
+	ellipse(bodyx+70 + eyeplusx, bodyy+40 + eyeplusy, 15, 15);
 	fill(255, 255, 255);
 	ellipse(bodyx+32 +eyeplusx, bodyy+40 +eyeplusy, 5, 5);
-	ellipse(bodyx+68 + eyeplusx, bodyy+40 + eyeplusx, 5, 5);
+	ellipse(bodyx+68 + eyeplusx, bodyy+40 + eyeplusy, 5, 5);
 
 	fill(245, 207, 14);                  //beak
 	triangle(bodyx+43, bodyy+60, bodyx+57, bodyy+60, bodyx+50, bodyy+55);
