@@ -23,7 +23,7 @@ void draw()
 	ears();
 	feet();
 	face();
-	mouseClicked();
+	eyes();
 }
 
 void moon()
@@ -114,7 +114,7 @@ void feet()
 int eyeplusx = 0;
 int eyeplusy = 0;
 
-void mouseClicked()
+void eyes()
 {
 	if(mouseX >= 255){
 		eyeplusx = 10;
@@ -136,22 +136,20 @@ void mouseClicked()
 	else{
 		eyeplusy = 0;
 	}
-}
-
-void face()
-{	
-	
-
+	noStroke();
 	fill(255, 255, 255);                 //eyes
 	ellipse(bodyx+27, bodyy+40, 45, 45);
 	ellipse(bodyx+73, bodyy+40, 45, 45);
 	fill(0);
-	ellipse(bodyx+30 + eyeplusx, bodyy+40 + eyeplusy, 15, 15);
-	ellipse(bodyx+70 + eyeplusx, bodyy+40 + eyeplusy, 15, 15);
+	ellipse(bodyx+29 + eyeplusx, bodyy+40 + eyeplusy, 15, 15);
+	ellipse(bodyx+72 + eyeplusx, bodyy+40 + eyeplusy, 15, 15);
 	fill(255, 255, 255);
 	ellipse(bodyx+32 +eyeplusx, bodyy+40 +eyeplusy, 5, 5);
-	ellipse(bodyx+68 + eyeplusx, bodyy+40 + eyeplusy, 5, 5);
+	ellipse(bodyx+70 + eyeplusx, bodyy+40 + eyeplusy, 5, 5);
+}
 
+void face()
+{	
 	fill(245, 207, 14);                  //beak
 	triangle(bodyx+43, bodyy+60, bodyx+57, bodyy+60, bodyx+50, bodyy+55);
 	triangle(bodyx+43, bodyy+60, bodyx+57, bodyy+60, bodyx+50, bodyy+70);
